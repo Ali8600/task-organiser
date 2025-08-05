@@ -14,7 +14,7 @@ router.use(authenticateJWT); // All routes protected
 
 router.post("/", createTodo);
 router.get("/", getTodos);
-router.get("/:id", authenticateJWT, getTodoById);
+router.get("/:id", getTodoById); // Removed duplicate authenticateJWT
 router.put("/:id", updateTodo);
 router.delete("/:id", deleteTodo);
 

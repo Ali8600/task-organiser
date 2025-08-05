@@ -3,19 +3,28 @@ import prisma from "../prisma/client";
 import { AuthenticatedRequest } from "../middlewares/authMiddleware";
 
 export const createTodo = async (req: AuthenticatedRequest, res: Response) => {
+  console.log('Request body:', req.body); // Debug log
+  console.log('Request headers:', req.headers); // Debug log
+  
   const { title, description } = req.body;
+
+  // Add input validation
+  if (!title || title.trim() === '') {
+    return res.status(400).json({ error: "Title is required" });
+  }
 
   try {
     const todo = await prisma.todo.create({
       data: {
-        title,
-        description,
+        title: title.trim(),
+        description: description?.trim() || null,
         userId: req.userId!,
       },
     });
 
     res.status(201).json(todo);
   } catch (error) {
+    console.error('Error creating todo:', error); // Debug log
     res.status(500).json({ error: "Failed to create todo" });
   }
 };
