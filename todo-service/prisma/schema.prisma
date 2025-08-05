@@ -15,11 +15,19 @@ datasource db {
 }
 
 model Todo {
-  id          String   @id @default(uuid())
+  id          Int      @id @default(autoincrement())
   title       String
   description String?
   isCompleted Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  userId      String
+  userId      Int
+  
+  // Me(Ali)-> Note: This creates a foreign key relationship but since User model 
+  // is in a different database, we can't use Prisma's relation syntax.
+  // The foreign key constraint would need to be handled at the application level
+  // or through database-level constraints if using the same database.
+  
+  @@index([userId])
 }
+

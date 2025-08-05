@@ -3,11 +3,13 @@ import axios, { setAuthToken } from "../api/axios";
 import { Link } from "react-router-dom";
 
 interface Todo {
-  id: string;
+  id: number;
   title: string;
   description: string;
-  completed?: boolean;
-  userId: string;
+  isCompleted?: boolean;
+  userId: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 function Todos() {

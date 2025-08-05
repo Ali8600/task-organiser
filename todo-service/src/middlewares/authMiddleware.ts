@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 export interface AuthenticatedRequest extends Request {
-  userId?: string;
+  userId?: number; // changed from string to number
 }
 
 export const authenticateJWT = (
@@ -19,7 +19,7 @@ export const authenticateJWT = (
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET!);
-    req.userId = (decoded as any).userId;
+    req.userId = Number((decoded as any).userId); // cast to number
     next();
   } catch (error) {
     return res.status(401).json({ message: 'Invalid token' });

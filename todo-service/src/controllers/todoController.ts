@@ -35,7 +35,11 @@ export const getTodos = async (req: AuthenticatedRequest, res: Response) => {
 
 //get a single todo by id
 export const getTodoById = async (req: AuthenticatedRequest, res: Response) => {
-  const { id } = req.params;
+  const id = Number(req.params.id);
+  
+  if (isNaN(id)) {
+    return res.status(400).json({ error: "Invalid todo ID" });
+  }
 
   try {
     const todo = await prisma.todo.findUnique({ where: { id } });
@@ -50,8 +54,12 @@ export const getTodoById = async (req: AuthenticatedRequest, res: Response) => {
 };
 
 export const updateTodo = async (req: AuthenticatedRequest, res: Response) => {
-  const { id } = req.params;
+  const id = Number(req.params.id);
   const { title, description, isCompleted } = req.body;
+
+  if (isNaN(id)) {
+    return res.status(400).json({ error: "Invalid todo ID" });
+  }
 
   try {
     const existing = await prisma.todo.findUnique({ where: { id } });
@@ -71,7 +79,11 @@ export const updateTodo = async (req: AuthenticatedRequest, res: Response) => {
 };
 
 export const deleteTodo = async (req: AuthenticatedRequest, res: Response) => {
-  const { id } = req.params;
+  const id = Number(req.params.id);
+  
+  if (isNaN(id)) {
+    return res.status(400).json({ error: "Invalid todo ID" });
+  }
 
   try {
     const existing = await prisma.todo.findUnique({ where: { id } });
