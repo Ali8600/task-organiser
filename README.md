@@ -84,7 +84,7 @@ npm run prisma:generate # Regenerate Prisma client
 
 ---
 
-## 🔐 Authentication Flow
+## Authentication Flow
 
 * Register via: `POST /api/users/register`
 * Login via: `POST /api/users/login`
@@ -93,7 +93,7 @@ npm run prisma:generate # Regenerate Prisma client
 
 ---
 
-## 📆 API Endpoints
+## API Endpoints
 
 ### User Service
 
@@ -127,37 +127,6 @@ Or use the OpenAPI file:
 ```
 docs/openapi.yaml
 ```
-
----
-
-## 📝 Unit Testing
-
-Unit test files are located in each service's `tests/` directory.
-
-```bash
-npm test
-```
-
-Tests include:
-
-* User registration/login flow
-* JWT validation
-* CRUD operations for todos
-
----
-
-## 🌐 Deployment (Optional)
-
-You can deploy the frontend using Vercel and backend using Render, Railway, or Fly.io.
-
-### Example:
-
-```md
-Frontend: https://aici-todo.vercel.app
-User Service: https://user-service.onrender.com
-Todo Service: https://todo-service.onrender.com
-```
-
 
 
 ---
