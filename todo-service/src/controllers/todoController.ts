@@ -3,9 +3,6 @@ import prisma from "../prisma/client";
 import { AuthenticatedRequest } from "../middlewares/authMiddleware";
 
 export const createTodo = async (req: AuthenticatedRequest, res: Response) => {
-  console.log('Request body:', req.body); // Debug log
-  console.log('Request headers:', req.headers); // Debug log
-  
   const { title, description } = req.body;
 
   // Add input validation
