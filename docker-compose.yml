@@ -1,6 +1,5 @@
-version: '3.8'
-
 services:
+  # Already existing
   user-db:
     image: postgres:14
     container_name: user-db
@@ -12,7 +11,54 @@ services:
       POSTGRES_DB: userdb
     volumes:
       - user-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  #New: todo-db
+  todo-db:
+    image: postgres:14
+    container_name: todo-db
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tododb
+    volumes:
+      - todo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # New: todo-service
+  todo-service:
+    build: ./todo-service
+    container_name: todo-service
+    ports:
+      - "5001:3000"
+    env_file:
+      - ./todo-service/.env
+    depends_on:
+      todo-db:
+        condition: service_healthy
+
+  # New: user-service
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "4000:3000"
+    env_file:
+      - ./user-service/.env
+    depends_on:
+      user-db:
+        condition: service_healthy
 
 volumes:
   user-db-data:
-
+  todo-db-data:
