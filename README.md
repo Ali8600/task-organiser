@@ -67,20 +67,29 @@ docker compose up --build
 
 ---
 
-## 🔧 Scripts & Commands
+##  Scripts & Commands
 
 ### Backend (both services):
 I would higly recommend to run the backend using dockerised containers
 
-```
-NOTE: I would higly recommend to run the backend using dockerised containers over these:
+**Recommended: Using Docker containers**
 
-npm run dev          # Start in dev mode
-npm run build        # Build TypeScript
-npm start            # Start production server
-npm run prisma:migrate  # Apply schema changes
-npm run prisma:generate # Regenerate Prisma client
+```bash
+docker compose up --build    # Start all services
+docker compose down          # Stop all services
 ```
+
+**Development (alternative to Docker):**
+
+```bash
+npm run dev                  # Start in dev mode
+npm run build               # Build TypeScript
+npm start                   # Start production server
+npm run prisma:migrate      # Apply schema changes
+npm run prisma:generate     # Regenerate Prisma client
+npm test                    # Run Jest unit tests
+```
+
 
 ---
 
@@ -112,6 +121,23 @@ npm run prisma:generate # Regenerate Prisma client
 
 ---
 
+## Unit Testing (using Jest)
+
+ ### Unit test files are located in each service's tests/ directory.
+
+   ```
+   npm test
+   ```
+
+   Tests include:
+   
+   User registration/login flow
+   
+   JWT validation
+   
+   CRUD operations for todos
+
+---
 ## API Documentation
 
 ### Postman Collection
@@ -119,13 +145,7 @@ npm run prisma:generate # Regenerate Prisma client
 You can import the Postman collection from:
 
 ```
-docs/AICI.postman_collection.json
-```
-
-Or use the OpenAPI file:
-
-```
-docs/openapi.yaml
+aici-challenge/AICI.postman_collection_ali.json
 ```
 
 
