@@ -129,14 +129,14 @@ npm test                    # Run Jest unit tests
 
    #### First Step (Choose the service you want to run down the unit test cases of...)
 
-   Unit-Tests for *`user-service`
+   Unit-Tests for `aici-challenge/user-service`
    ```
    cd user-service
    ```
 
    ###OR
 
-   Unit-Tests for *`user-service`
+   Unit-Tests for `aici-challenge/todo-service`
    ```
    cd todo-service
    ```
