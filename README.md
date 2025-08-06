@@ -125,6 +125,24 @@ npm test                    # Run Jest unit tests
 
  ### Unit test files are located in each service's tests/ directory.
 
+   IMP: Tests are located inside each service, and they can be run once you are in that directory/folder.
+
+   #### First Step (Choose the service you want to run down the unit test cases of...)
+
+   Unit-Tests for *`user-service`
+   ```
+   cd user-service
+   ```
+
+   ###OR
+
+   Unit-Tests for *`user-service`
+   ```
+   cd todo-service
+   ```
+
+   #### Second Step (Simply run this command now, and enjoy ;))
+
    ```
    npm test
    ```
