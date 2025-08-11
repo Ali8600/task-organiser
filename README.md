@@ -4,7 +4,7 @@ A full-stack Todo application built for the AICI Challenge. It features user aut
 
 ---
 <p>
-  <img width="22" height="22" alt="image" src="https://github.com/user-attachments/assets/513e75e4-8d85-454a-8c29-125b3d4f8cbc" />
+  <img width="22" height="22" alt="image" src="https://github.com/user-attachments/assets/513e75e4-8d85-454a-8c29-125b3d4f8cbc" style="vertical-align: middle;" />
   <strong>NOTE:</strong> The Postman collection's link has been added at the end of the document.
 </p>
 
