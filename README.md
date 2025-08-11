@@ -64,7 +64,7 @@ JWT_SECRET=your_jwt_secret
 
 ### 3. Build & Start the App's Backend:
 
-# Start all services
+#### Start all services
 ```
 docker compose up --build 
 ```
