@@ -3,8 +3,7 @@
 A full-stack Todo application built for the AICI Challenge. It features user authentication, task creation, management, and real-time updates, with containerized services using Docker and a modern frontend using React + Vite.
 
 ---
-<img width="22" height="22" alt="image" src="https://github.com/user-attachments/assets/513e75e4-8d85-454a-8c29-125b3d4f8cbc" />
-NOTE: The Postman collection's link has been added at the end of the document. 
+<img width="22" height="22" alt="image" src="https://github.com/user-attachments/assets/513e75e4-8d85-454a-8c29-125b3d4f8cbc" /> NOTE: The Postman collection's link has been added at the end of the document. 
 
 ##  Tech Stack
 
