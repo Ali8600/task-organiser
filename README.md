@@ -70,6 +70,14 @@ or
 docker compose up --d
 ```
 
+
+> This spins up:
+>
+> * PostgreSQL for both services
+> * Express APIs for users & todos
+> * Runs Prisma migrations
+
+
 Note: if you want to close the project, it's recommended to follow
 to Stop the backend:
 
@@ -77,12 +85,6 @@ to Stop the backend:
 docker compose down          # Stop all services
 ```
 
-
-> This spins up:
->
-> * PostgreSQL for both services
-> * Express APIs for users & todos
-> * Runs Prisma migrations
 
 ---
 
