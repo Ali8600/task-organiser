@@ -94,17 +94,17 @@ docker compose down          # Stop all services
 
 ### 4. Start App's Frontend:
 
-##1. Firstly:
+#### 1. Firstly:
 ```
 npm install
 ```
 
-##2. Secondly (optional: if you don't have vite):
+#### 2. Secondly (optional: if you don't have vite):
 ```
 npm install vite@5
 ```
 
-##3. Now you can run the app (in dev mode):
+#### 3. Now you can run the app (in dev mode):
 ```
 npm run dev
 ```
