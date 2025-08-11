@@ -154,7 +154,7 @@ npm run dev
    cd user-service
    ```
 
-   ###OR
+   #### OR
 
    Unit-Tests for `aici-challenge/todo-service`
    ```
@@ -167,7 +167,7 @@ npm run dev
    npm test
    ```
 
-   Tests include:
+   ### Tests include:
    
    User registration/login flow
    
