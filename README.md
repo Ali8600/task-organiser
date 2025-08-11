@@ -3,6 +3,7 @@
 A full-stack Todo application built for the AICI Challenge. It features user authentication, task creation, management, and real-time updates, with containerized services using Docker and a modern frontend using React + Vite.
 
 ---
+NOTE: The Postman collection's link has been added at the end of the document. 
 
 ##  Tech Stack
 
@@ -36,7 +37,12 @@ git clone https://github.com/your-username/aici-todo-app.git
 cd aici-todo-app
 ```
 
-### 2. Create Environment Files
+### 2. Create Environment Files (REQUIRED)
+⚠️ **Critical**: The app will not start without these .env files!
+
+**Important**: You must create these files before starting the app.
+
+Create `user-service/.env` & `todo-service/.env`:
 
 #### `user-service/.env`
 
@@ -52,43 +58,51 @@ DATABASE_URL=postgresql://postgres:password@todo-db:5432/tododb
 JWT_SECRET=your_jwt_secret
 ```
 
-### 3. Build & Start the App
+### 3. Build & Start the App's Backend:
+
+# Start all services
+```
+docker compose up --build 
+```
+or
 
 ```
-docker compose up --build
+docker compose up --d
 ```
+
+Note: if you want to close the project, it's recommended to follow
+to Stop the backend:
+
+```
+docker compose down          # Stop all services
+```
+
 
 > This spins up:
 >
 > * PostgreSQL for both services
 > * Express APIs for users & todos
 > * Runs Prisma migrations
-> * React frontend (if added under `/frontend`)
 
 ---
 
-##  Scripts & Commands
+### 4. Start App's Frontend:
 
-### Backend (both services):
-I would higly recommend to run the backend using dockerised containers
-
-**Recommended: Using Docker containers**
-
-```bash
-docker compose up --build    # Start all services
-docker compose down          # Stop all services
+##1. Firstly:
+```
+npm install
 ```
 
-**Development (alternative to Docker):**
-
-```bash
-npm run dev                  # Start in dev mode
-npm run build               # Build TypeScript
-npm start                   # Start production server
-npm run prisma:migrate      # Apply schema changes
-npm run prisma:generate     # Regenerate Prisma client
-npm test                    # Run Jest unit tests
+##2. Secondly (optional: if you don't have vite):
 ```
+npm install vite@5
+```
+
+##3. Now you can run the app (in dev mode):
+```
+npm run dev
+```
+
 
 
 ---
@@ -160,7 +174,13 @@ npm test                    # Run Jest unit tests
 
 ### Postman Collection
 
-You can import the Postman collection from:
+You can import and utilise the Postman collection from this link:
+
+```
+https://www.postman.com/mission-specialist-78111165/workspace/aici-challenge-ali/collection/27922011-b5bef99e-2b90-4889-bd73-f10fe66480e9?action=share&creator=27922011
+```
+
+You can import the Postman collection json from:
 
 ```
 aici-challenge/AICI.postman_collection_ali.json
