@@ -1,4 +1,4 @@
-# AICI Challenge – Full Stack Todo App
+# Task Organiser – Full Stack Todo App
 
 A full-stack Todo application built for the AICI Challenge. It features user authentication, task creation, management, and real-time updates, with containerized services using Docker and a modern frontend using React + Vite.
 
