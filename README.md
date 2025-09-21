@@ -192,7 +192,6 @@ You can import the Postman collection json from:
 aici-challenge/AICI.postman_collection_ali.json
 ```
 
-
 ---
 
 Developed by [Ali Idrees](https://github.com/ali8600)
