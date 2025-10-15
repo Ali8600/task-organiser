@@ -71,7 +71,7 @@ docker compose up --build
 or
 
 ```
-docker compose up --d
+docker compose up -d
 ```
 
 
